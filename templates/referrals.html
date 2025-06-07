@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Mining Game" data-tk="Gazyp Çykaryş Oýny" data-ru="Игра Майнинг">Mining Game</title>
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body class="light-mode">
+    {% include 'header.html' %}
+    <main class="content">
+        <div class="referral-section">
+            <h2 data-en="Invite Friends" data-tk="Dostlary Çagyryň" data-ru="Приглашайте друзей">Invite Friends</h2>
+            <p data-en="Share your referral link to earn 5 coins per friend!" 
+               data-tk="Dostuňyza 5 teňňe gazanmak üçin ugrukdyryş baglanyşygyňyzy paýlaşyň!" 
+               data-ru="Поделитесь реферальной ссылкой, чтобы заработать 5 монет за друга!">
+                Share your referral link to earn 5 coins per friend!
+            </p>
+            <input type="text" id="referral-link" value="https://t.me/YourBotName?start=12345" readonly class="referral-input">
+            <button class="form-button" data-en="Copy Link" data-tk="Baglanyşygy Göçüriň" data-ru="Скопировать ссылку">Copy Link</button>
+        </div>
+    </main>
+    {% include 'footer.html' %}
+    <script src="/static/js/header.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/footer.js"></script>
+</body>
+</html>

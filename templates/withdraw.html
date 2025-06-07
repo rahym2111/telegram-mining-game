@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Mining Game" data-tk="Gazyp Çykaryş Oýny" data-ru="Игра Майнинг">Mining Game</title>
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body class="light-mode">
+    {% include 'header.html' %}
+    <main class="content">
+        <div class="withdrawal-section">
+            <h2 data-en="Request Withdrawal" data-tk="Çykarmak Haýyşy" data-ru="Запрос на вывод">Request Withdrawal</h2>
+            <form id="withdraw-form" class="withdrawal-form">
+                <input type="text" id="name" placeholder="Full Name" data-en-placeholder="Full Name" data-tk-placeholder="Doly Ady" data-ru-placeholder="Полное имя" required>
+                <input type="tel" id="phone" placeholder="Phone Number" data-en-placeholder="Phone Number" data-tk-placeholder="Telefon Nomeri" data-ru-placeholder="Номер телефона" required>
+                <input type="number" id="amount" placeholder="Amount (min 500)" data-en-placeholder="Amount (min 500)" data-tk-placeholder="Mukdar (iň az 500)" data-ru-placeholder="Сумма (мин. 500)" required>
+                <button type="submit" class="form-button" data-en="Submit Withdrawal" data-tk="Çykarmak Tabşyryň" data-ru="Подать заявку на вывод">Submit Withdrawal</button>
+            </form>
+        </div>
+    </main>
+    {% include 'footer.html' %}
+    <script src="/static/js/header.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/footer.js"></script>
+</body>
+</html>
