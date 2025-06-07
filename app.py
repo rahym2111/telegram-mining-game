@@ -20,7 +20,7 @@ TELEGRAM_BOT_TOKEN = app.config['TELEGRAM_BOT_TOKEN']
 bot_application = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    web_app_url = os.environ.get('WEB_APP_URL', 'https://your-render-app.onrender.com')
+    web_app_url = os.environ.get('WEB_APP_URL', 'http://telegram-mining-game.onrender.com')
     await update.message.reply_text(
         'Oýny başlaň!',
         reply_markup={'keyboard': [[{'text': 'Oýny Aç', 'web_app': {'url': web_app_url}}]]}
@@ -28,12 +28,15 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 bot_application.add_handler(CommandHandler('start', start))
 
-# Webhook for Telegram Bot
 @app.route('/webhook', methods=['POST'])
 def webhook():
-    update = Update.de_json(request.get_json(), bot_application.bot)
-    bot_application.process_update(update)
-    return '', 200
+    try:
+        update = Update.de_json(request.get_json(), bot_application.bot)
+        bot_application.process_update(update)
+        return '', 200
+    except Exception as e:
+        print(f"Webhook error: {e}")
+        return '', 500
 
 # Generate referral code
 def generate_referral_code():
